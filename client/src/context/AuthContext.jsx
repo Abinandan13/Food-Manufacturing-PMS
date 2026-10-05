@@ -55,16 +55,6 @@ export function AuthProvider({ children }) {
     return res;
   };
 
-  const register = async (payload) => {
-    const res = await authService.register(payload);
-    if (res.success && res.token) {
-      localStorage.setItem('token', res.token);
-      localStorage.setItem('user', JSON.stringify(res.user));
-      setUser(res.user);
-    }
-    return res;
-  };
-
   const logout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
@@ -73,7 +63,7 @@ export function AuthProvider({ children }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, register, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

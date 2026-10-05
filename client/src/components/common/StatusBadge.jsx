@@ -15,6 +15,10 @@ const BADGE_MAP = {
   Delayed:         'badge-red',
   Cancelled:       'badge-gray',
 
+  // Account status
+  Active:          'badge-green',
+  Inactive:        'badge-gray',
+
   // Stock status
   Available:       'badge-green',
   'Low Stock':     'badge-yellow',
